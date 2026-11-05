@@ -1,0 +1,15 @@
+/# A test of the library of `hello`, run by `nxpkg test`. #/
+program hello_test
+
+import test
+import hello
+
+fn test_greet() {
+    test.assert_eq<string>(hello.greet("Ada"), "Hello, Ada!")
+}
+
+fn main() -> int32 {
+    var runner : test.TestRunner = test.TestRunner()
+    runner.add("greet", test_greet)
+    return runner.run_and_report()
+}

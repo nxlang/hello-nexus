@@ -1,0 +1,11 @@
+/# The library of `hello`: its logic, used by its program and its tests. #/
+module hello
+
+/#
+A greeting for `who`.
+@param who  The name to greet.
+@returns    The greeting.
+#/
+export fn greet(who : string) -> string {
+    return "Hello, " + who + "!"
+}

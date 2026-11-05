@@ -1,0 +1,15 @@
+/# The program of `hello`: it greets `HELLO_NAME`, or its first argument. #/
+program main
+
+import io
+import os
+import hello
+
+fn main() {
+    var args : array<string> = os.args()
+    var who : string = os.get_env_or("HELLO_NAME", "world")
+    if args.len() > 1 {
+        who = args[1]
+    }
+    io.println(hello.greet(who))
+}
